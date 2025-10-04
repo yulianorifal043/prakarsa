@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAKARSA | HRD Panel Premium</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        // Konfigurasi Tailwind (Warna dan Shadows) - WAJIB ADA DI SINI
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], }, colors: { 'primary': '#2F855A', 'secondary': '#38B2AC', 'dark-bg': '#1A202C', 'light-bg': '#F0FFF4', 'card-light': '#FFFFFF', 'card-dark': '#2D3748', 'icon-bg-light': '#E6FFFA', 'icon-bg-dark': '#4A5568', }, boxShadow: { 'custom-light': '0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 15px -3px rgba(0, 0, 0, 0.05)', 'custom-dark': '0 15px 30px -5px rgba(0, 0, 0, 0.3), 0 8px 15px -3px rgba(0, 0, 0, 0.2)', 'inner-custom': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)', }, } } }
+    </script>
+    <style>
+        .icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg transition-colors duration-500 font-sans text-gray-800 dark:text-gray-200 min-h-screen flex flex-col">
+    
+    <header class="sticky top-0 z-20 p-4 bg-card-light dark:bg-dark-bg shadow-md transition-colors duration-500">
+        </header>
+
+    <main id="app-container" class="container mx-auto p-4 md:p-8 max-w-5xl flex-grow">
+
+        <section id="hrd-dashboard">
+            <div class="bg-card-light dark:bg-card-dark p-6 md:p-8 rounded-2xl shadow-custom-light dark:shadow-custom-dark">
+                
+                <h2 class="text-3xl md:text-4xl font-black text-primary dark:text-secondary mb-2">Panel HRD PRAKARSA <span class="text-sm font-medium text-red-500 ml-2">(PREMIUM SIMULATION)</span></h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">Akses eksklusif untuk melihat profil psikometrik karyawan/calon peserta.</p>
+
+                <div class="mb-8 p-6 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600">
+                    </div>
+
+                <div id="participant-result-card" class="hidden mt-8 p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg border-t-4 border-primary">
+                    </div>
+
+                <button onclick="window.location.href='index.html'" class="mt-8 px-6 py-3 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold rounded-lg hover:bg-gray-400 transition duration-300">
+                    Kembali ke Beranda
+                </button>
+            </div>
+        </section>
+
+    </main>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/hrd-main.js" type="module"></script> 
+    
+    <script>
+        const htmlElement = document.documentElement;
+        const themeIcon = document.getElementById('theme-toggle').querySelector('span');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                themeIcon.innerHTML = '<span class="text-xl">🌙</span>';
+                localStorage.theme = 'dark';
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.innerHTML = '<span class="text-xl">☀️</span>';
+                localStorage.theme = 'light';
+            }
+        }
+        
+        const storedTheme = localStorage.theme;
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    </script>
+</body>
+</html>

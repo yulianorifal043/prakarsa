@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAKARSA | Temukan Arah Karir Anda</title>
+    
+    <meta name="description" content="Temukan arah karir, bisnis, dan studi ideal Anda melalui analisis kepribadian mendalam berbasis Big Five & RIASEC di PRAKARSA.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2F855A', 
+                        'secondary': '#38B2AC', 
+                        'dark-bg': '#1A202C', 
+                        'light-bg': '#F0FFF4', 
+                        'card-light': '#FFFFFF',
+                        'card-dark': '#2D3748', 
+                        'icon-bg-light': '#E6FFFA', 
+                        'icon-bg-dark': '#4A5568', 
+                    },
+                    boxShadow: {
+                        'custom-light': '0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 15px -3px rgba(0, 0, 0, 0.05)',
+                        'custom-dark': '0 15px 30px -5px rgba(0, 0, 0, 0.3), 0 8px 15px -3px rgba(0, 0, 0, 0.2)',
+                        'inner-custom': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg-gradient {
+            background-image: linear-gradient(to right top, var(--tw-gradient-stops));
+        }
+        .dark .hero-bg-gradient {
+            background-image: linear-gradient(to right top, #2D3748, #1A202C);
+        }
+        .icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg transition-colors duration-500 font-sans text-gray-800 dark:text-gray-200 min-h-screen flex flex-col">
+    
+    <header class="sticky top-0 z-20 p-4 bg-card-light dark:bg-dark-bg shadow-md transition-colors duration-500">
+        <div class="container mx-auto flex justify-between items-center max-w-5xl">
+            <h1 id="app-logo" class="text-2xl font-black text-primary dark:text-secondary cursor-pointer" onclick="window.location.href='index.html'">
+                PRAKARSA <span class="text-xs font-medium text-secondary ml-1 px-2 py-0.5 rounded-full bg-primary/20 dark:bg-secondary/20">BETA</span>
+            </h1>
+            
+            <nav class="hidden md:block">
+                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary mx-3 transition duration-200">Tentang</a>
+                <a href="#benefits" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary mx-3 transition duration-200">Manfaat</a>
+                <a href="hrd-dashboard.html" class="text-red-500 dark:text-red-400 hover:text-primary dark:hover:text-white mx-3 font-semibold transition duration-200">HRD Panel</a>
+            </nav>
+            
+            <div class="flex items-center">
+                 <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300 shadow-inner-custom mr-2 md:mr-0" aria-label="Toggle Dark/Light Mode"><span id="theme-icon">☀️</span></button>
+                <a href="test.html" id="header-cta-button" class="hidden md:inline-block px-4 py-2 bg-primary text-white text-sm font-bold rounded-full shadow-lg hover:bg-green-700 transition duration-300 ml-4">Uji Coba Gratis</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="app-container" class="container mx-auto p-4 md:p-8 max-w-5xl flex-grow">
+
+        <section id="landing-page">
+            
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-r from-primary to-secondary text-white p-8 md:p-16 mb-16 hero-bg-gradient from-green-300 to-primary dark:from-dark-bg dark:to-gray-800">
+                <div class="relative z-10 text-center md:text-left md:flex md:items-center">
+                    <div class="md:w-3/5">
+                        <p class="text-lg font-semibold mb-2">Selamat Datang di PRAKARSA!</p>
+                        <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+                            Arah Jelas <span class="text-yellow-200">Karir & Hidup</span> Anda.
+                        </h2>
+                        <p class="text-lg md:text-xl text-opacity-90 mb-8 max-w-xl">
+                            Analisis psikometri terintegrasi untuk menemukan potensi terbaik Anda. Ambil langkah profesional yang tepat.
+                        </p>
+                        
+                        <a href="test.html" id="landing-start-button" class="px-10 py-4 bg-white text-primary text-xl font-bold rounded-full shadow-lg transform hover:scale-[1.05] hover:bg-gray-100 transition duration-300 ease-in-out">
+                            Uji Coba PRAKARSA BETA Gratis →
+                        </a>
+                        <p class="text-sm text-white text-opacity-80 mt-3">Tidak perlu registrasi. Langsung dapatkan hasilnya.</p>
+                    </div>
+                    <div class="hidden md:block md:w-2/5 md:ml-8 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="assets/hero.png" alt="Professional Illustration" class="w-full h-auto object-cover rounded-xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="py-12 md:py-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                    Apa Itu PRAKARSA?
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark flex items-start space-x-4 hover:shadow-2xl transition duration-300">
+                        <div class="icon-circle bg-icon-bg-light dark:bg-icon-bg-dark text-primary dark:text-secondary shadow-lg">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-xl mb-1 text-gray-900 dark:text-white">OCEAN: Mengenal Diri Inti</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Mengukur **Openness, Conscientiousness, Extraversion, Agreeableness, dan Neuroticism** untuk memahami kepribadian dasar Anda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark flex items-start space-x-4 hover:shadow-2xl transition duration-300">
+                        <div class="icon-circle bg-icon-bg-light dark:bg-icon-bg-dark text-secondary dark:text-primary shadow-lg">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-xl mb-1 text-gray-900 dark:text-white">RIASEC: Arah Karir Jelas</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Memetakan minat Anda terhadap lingkungan **Realistic, Investigative, Artistic, Social, Enterprising, dan Conventional** untuk kesuksesan karir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="benefits" class="py-12 md:py-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                    Manfaat PRAKARSA Sesuai Kebutuhan Anda
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark border-b-4 border-indigo-400">
+                        <i class="fas fa-user-circle text-4xl block mb-3 text-indigo-500"></i>
+                        <h4 class="font-extrabold text-lg mb-2 text-gray-900 dark:text-white">Untuk Personal & Jurusan</h4>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm space-y-1">
+                            <li>Mengidentifikasi jurusan kuliah yang benar-benar sesuai minat.</li>
+                            <li>Memahami gaya belajar dan kelemahan pribadi yang harus diasah.</li>
+                            <li>Mendapatkan kejelasan arah hidup dan pengembangan skill.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark border-b-4 border-primary">
+                        <i class="fas fa-briefcase text-4xl block mb-3 text-primary"></i>
+                        <h4 class="font-extrabold text-lg mb-2 text-gray-900 dark:text-white">Untuk Karir & Bisnis Startup</h4>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm space-y-1">
+                            <li>Menentukan posisi kerja yang paling cocok dengan profil kepribadian Anda.</li>
+                            <li>Mengidentifikasi potensi kepemimpinan atau risiko dalam berbisnis.</li>
+                            <li>Menyusun strategi negosiasi dan wawancara yang kuat.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark border-b-4 border-red-500">
+                        <i class="fas fa-gem text-4xl block mb-3 text-red-500"></i>
+                        <h4 class="font-extrabold text-lg mb-2 text-gray-900 dark:text-white">Untuk Korporat & Rekrutmen</h4>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm space-y-1">
+                            <li>Akses Dashboard HRD untuk melihat gambaran kandidat secara ringkas.</li>
+                            <li>Memprediksi kesesuaian budaya kerja dan potensi risiko (*Premium Mockup*).</li>
+                            <li>Basis data terstruktur untuk pengambilan keputusan berbasis data.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="why-us" class="py-12 md:py-16">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                    Mengapa PRAKARSA Diandalkan?
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark text-center hover:shadow-2xl transition duration-300">
+                        <div class="icon-circle bg-icon-bg-light dark:bg-icon-bg-dark text-primary mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4 class="font-extrabold text-lg mb-2 text-gray-900 dark:text-white">Validitas Ilmiah</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Model psikologi teruji yang diakui secara global. Hasil Anda berdasarkan data, bukan tebakan.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark text-center hover:shadow-2xl transition duration-300">
+                        <div class="icon-circle bg-icon-bg-light dark:bg-icon-bg-dark text-secondary mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h4 class="font-extrabold text-lg mb-2 text-gray-900 dark:text-white">Fokus Aksi Nyata</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Kami menerjemahkan psikologi menjadi langkah praktis untuk karir, studi, dan bisnis.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-custom-light dark:shadow-custom-dark text-center hover:shadow-2xl transition duration-300">
+                        <div class="icon-circle bg-icon-bg-light dark:bg-icon-bg-dark text-primary mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4 class="font-extrabold text-lg mb-2 text-gray-900 dark:text-white">Siap Diandalkan</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Algoritma kami dirancang untuk memberikan rekomendasi yang sangat relevan, bahkan di tahap BETA.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 mb-16 text-center">
+                <a href="test.html" id="final-cta-button" 
+                        class="px-12 py-5 bg-primary text-white text-2xl font-black rounded-xl shadow-2xl shadow-primary/50 transform hover:scale-[1.02] hover:bg-green-700 transition duration-300 ease-in-out">
+                    Mulai Uji Coba Gratis Sekarang
+                </a>
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer class="mt-auto py-8 text-center text-sm text-gray-500 dark:text-gray-600 border-t dark:border-gray-800">
+        <p>&copy; 2024 PRAKARSA. All Rights Reserved. Versi BETA.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/app.js" type="module"></script>
+    
+    <script>
+        // LOGIKA DARK MODE (WAJIB DISETIAP HALAMAN)
+        const htmlElement = document.documentElement;
+        const themeIcon = document.getElementById('theme-toggle').querySelector('span'); 
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                themeIcon.innerHTML = '<span class="text-xl">🌙</span>';
+                localStorage.theme = 'dark';
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.innerHTML = '<span class="text-xl">☀️</span>';
+                localStorage.theme = 'light';
+            }
+        }
+        
+        const storedTheme = localStorage.theme;
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    </script>
+</body>
+</html>
